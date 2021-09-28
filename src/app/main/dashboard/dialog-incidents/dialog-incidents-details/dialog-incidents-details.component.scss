@@ -1,0 +1,81 @@
+agm-map {
+    width: 30vw;
+    height: 74vh;
+}
+
+// td,
+// th {
+//     border: 1px solid #9ba7eb;
+//     padding: 2%;
+// }
+// th {
+//     background-color: #bbdeff;
+// }
+// tr:hover {
+//     background-color: #bbdeff;
+// }
+// table {
+//     text-align: center;
+//     cursor: pointer;
+//     padding: 3%;
+// }
+// * {
+//     padding: 0;
+//     margin: 0;
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+// }
+.table {
+    height: 18vh;
+    width: auto;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    margin: 2%;
+}
+
+.table:hover {
+    overflow: auto;
+}
+
+th {
+    top: 0;
+    position: sticky;
+    text-align: left;
+    background-color: #bbdeff;
+    color: black;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #bbdeff;
+    cursor: pointer;
+}
+
+mat-icon,
+mat-label {
+    cursor: pointer;
+}
+
+body {
+    background: #f2f2f2;
+    font-family: Arial, Sans-serif;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"] {
+    border: 1px solid #bbdeff;
+    font-family: Arial;
+    width: 19vw;
+    padding: 3%;
+}
+
+mat-label {
+    font-weight: bolder;
+    color: black;
+}
+
+mat-card {
+    border: 1px solid rgb(187, 184, 184);
+}

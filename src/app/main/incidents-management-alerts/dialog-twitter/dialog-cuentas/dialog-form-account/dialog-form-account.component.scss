@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f2f2f2;
+    font-family: Arial, Sans-serif;
+}
+
+.formulario input {
+    display: block;
+    color: rgb(167, 162, 162);
+    width: 100%;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"] {
+    width: 100%;
+    padding: 2%;
+    margin: 1%;
+    border: 1px solid #226fc1;
+    font-family: Arial;
+}
+
+.formulario input[type="submit"]:hover {
+    background: #4fb560;
+    color: #fff;
+    width: 100%;
+}
+
+mat-label {
+    font-weight: bolder;
+    color: black;
+    width: 100%;
+}

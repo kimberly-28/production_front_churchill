@@ -1,0 +1,164 @@
+<div style="width: 100%; max-height: 100%;" fxLayoutAlign="right right">
+    <div style="width: 100%;">
+
+        <mat-tab-group #tabRef (selectedTabChange)=" getLastLocation(tabRef.selectedIndex) ">
+
+            <mat-tab label="Históricos De Incidencias">
+                <mat-grid-list cols="1" rowHeight="2:1">
+                    <mat-grid-tile style="max-width: 100%;">
+                        <mat-card style="width: 100%; height: 100%;">
+                            <h1 style="text-align: center; align-items: center; ">Marcaje de Tendencia</h1>
+                            <div>
+                                <canvas baseChart [datasets]="lineChartData " [labels]="lineChartLabels " [options]="lineChartOptions " [colors]="lineChartColors " [legend]="lineChartLegend " [chartType]="lineChartType " (chartHover)="chartHovered($event)
+                                    " (chartClick)="chartClicked($event) "></canvas>
+                            </div>
+                        </mat-card>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <mat-grid-list cols="1" rowHeight="2:1">
+                    <mat-grid-tile style="max-width: 100%;">
+                        <mat-card style="width: 100%; height: 100%; background: #e1e6eb;">
+
+                            <div fxLayoutAlign="space-around">
+                                <mat-form-field appearance="legacy" fxLayoutAlign="center center">
+                                    <mat-label>
+                                        Buscar
+                                    </mat-label>
+                                    <input matInput placeholder="Ingrese Dato" (keyup)="applyFilter($event)" #input>
+                                    <mat-icon matSuffix style="color: #1da1f2">search</mat-icon>
+                                </mat-form-field>
+                            </div>
+
+                            <div fxLayoutAlign="center center">
+                                <div class="table mat-elevation-z8">
+
+                                    <table mat-table [dataSource]="dataSource" matSort style="width: 100%;">
+
+                                        <ng-container matColumnDef="vehiculo">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Vehículo</th>
+                                            <td mat-cell *matCellDef="let row"> {{row.vehiculo}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="conductor">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Conductor</th>
+                                            <td mat-cell *matCellDef="let row"> {{row.conductor}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="proveedor">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Proveedor de Servicios</th>
+                                            <td mat-cell *matCellDef="let row"> {{row.proveedor}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="ubicacion">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Ubicación</th>
+                                            <td mat-cell *matCellDef="let row"> {{row.ubicacion}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="riesgo">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nivel de Riesgo </th>
+                                            <td mat-cell *matCellDef="let row"> {{row.riesgo}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="alerta">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de Alerta </th>
+                                            <td mat-cell *matCellDef="let row"> {{row.alerta}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="protocolo">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Protocolo De Acción </th>
+                                            <td mat-cell *matCellDef="let row"> {{row.protocolo}} </td>
+                                        </ng-container>
+
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                                        <tr class="mat-row" *matNoDataRow>
+                                            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                            </div>
+
+                            <mat-paginator fxLayoutAlign="center center" style="background: #e1e6eb; color: black;  font-weight: bold;" [pageSizeOptions]="[10, 15, 20, 100]"></mat-paginator>
+
+                        </mat-card>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </mat-tab>
+
+            <mat-tab label="Administración Ejecutivo">
+                <div fxLayoutAlign="end end">
+                    <button mat-raised-button (click)="openAddGeofencing('FRC')" style="color: rgb(21, 21, 177);">Agregar Geocerca (Ejecutivo)</button>
+                    <button mat-raised-button style="border-radius: 5%;"> <mat-icon style="color: rgb(21, 21, 177);">search</mat-icon> </button>
+                </div>
+                <agm-map [latitude]="lat " [longitude]="lng " [zoom]="zoom ">
+                    <button id="Settings " class="toggle-button controls button ">
+                    <mat-icon aria-hidden="true ">settings</mat-icon>
+                </button>
+                    <agm-marker *ngFor="let vehicle of vehiclesFirstCall " [latitude]="vehicle.latitude " [longitude]="vehicle.longitude ">
+                        <agm-info-window>
+                            <div>
+                                <h3>{{ vehicle.asset }}</h3>
+                                <p> lat: {{ vehicle.latitude }} </p>
+                                <p> lng: {{ vehicle.longitude }} </p>
+                                <button mat-raised-button class=" compose-dialog-button w-100-p " (click)="openTrackingDetails(vehicle.assetId, vehicle.provider) ">tracking details</button>
+                            </div>
+                        </agm-info-window>
+                    </agm-marker>
+                </agm-map>
+
+            </mat-tab>
+
+            <mat-tab label="Administración Holanda ">
+                <div fxLayoutAlign="end end">
+                    <button mat-raised-button (click)="openAddGeofencing( 'FRC')" style="color: rgb(21, 21, 177);">Perímetro De Ruta</button>
+                </div>
+
+                <agm-map [latitude]="lat " [longitude]="lng " [zoom]="zoom ">
+                    <agm-marker *ngFor="let vehicle of vehiclesSmartTracker " [latitude]="vehicle.latitude " [longitude]="vehicle.longitude ">
+                        <agm-info-window>
+                            <h3 style="text-align: center; ">{{ vehicle.asset }}</h3>
+                            <p style="text-align: center; "> lat: {{ vehicle.latitude}} </p>
+                            <p style="text-align: center; "> lng: {{ vehicle.longitude }} </p>
+                            <button mat-raised-button class=" compose-dialog-button w-100-p " (click)="openTrackingDetails(vehicle.assetId, vehicle.provider) ">tracking details</button>
+                        </agm-info-window>
+                    </agm-marker>
+                </agm-map>
+            </mat-tab>
+
+
+        </mat-tab-group>
+
+    </div>
+
+    <!-- GRAFICOS -->
+    <!-- <div style="width: 80%; height: 100%; ">
+        <mat-card style="width: 100%; height: 100%; padding-top: 3%; ">
+            <h1 style="text-align: center; align-items: center; margin-bottom: 3%; ">Cumplimiento</h1>
+            <div style="max-width: 100%; ">
+                <div>
+                    <div>
+                        <canvas baseChart [datasets]="lineChartData " [labels]="lineChartLabels " [options]="lineChartOptions " [colors]="lineChartColors " [legend]="lineChartLegend " [chartType]="lineChartType " (chartHover)="chartHovered($event)
+                " (chartClick)="chartClicked($event) "></canvas>
+                    </div>
+                </div>
+                <div style="margin-top: 2%; margin-bottom: 2%; margin-top: 5%; ">
+
+                </div>
+            </div>
+
+            <div style="width: 100%;" fxLayout="row">
+                <div fxLayout="column">
+                    <h2>Security</h2>
+                    <canvas baseChart [data]=" doughnutChartDataSecurity " [labels]="doughnutChartLabels " width="280 " height="280 " [chartType]="doughnutChartType "></canvas>
+                </div>
+                <div fxLayout="column">
+                    <h2>Safety</h2>
+                    <canvas baseChart [data]="doughnutChartDataSafety " [labels]="doughnutChartLabels " width="280 " height="280 " [chartType]="doughnutChartType "></canvas>
+                </div>
+            </div>
+        </mat-card>
+    </div> -->
+</div>

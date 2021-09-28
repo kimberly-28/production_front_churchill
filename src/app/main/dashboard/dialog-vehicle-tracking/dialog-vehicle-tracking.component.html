@@ -1,0 +1,129 @@
+<div fxLayoutAlign="end end" style="margin-bottom: 2%;">
+    <button mat-flat-button color="warn" mat-dialog-close>X</button>
+</div>
+
+<div>
+    <div fxLayoutAlign="center center">
+        <h1>Vehicle Tracking System</h1>
+    </div>
+    <hr>
+    <div fxLayoutAlign="center center">
+        <h2>Ice Cream</h2>
+    </div>
+</div>
+
+<div fxLayoutAlign="right right" style="height: auto; width: auto;">
+
+    <mat-card style="width: 100%; height: 100%; background: #e1e6eb;">
+
+        <div fxLayoutAlign="space-around">
+            <mat-form-field appearance="legacy" fxLayoutAlign="center center">
+                <mat-label>
+                    Buscar
+                </mat-label>
+                <input matInput placeholder="Ingrese Dato" (keyup)="applyFilter($event)" #input>
+                <mat-icon matSuffix style="color: #1da1f2">search</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div fxLayoutAlign="center center">
+            <div class="table mat-elevation-z8">
+
+                <table mat-table [dataSource]="dataSource" matSort style="width: 60vh;">
+
+                    <!-- ID Column -->
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> N° Vehículos</th>
+                        <td mat-cell *matCellDef="let row" (click)="openDialogVehicleDetails() "> {{row.id}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="gps">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> GPS </th>
+                        <td mat-cell *matCellDef="let row" (click)="openDialogVehicleDetails() "> {{row.gps}} </td>
+                    </ng-container>
+
+                    <!-- Fruit Column -->
+                    <ng-container matColumnDef="zone">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Zona de alerta </th>
+                        <td mat-cell *matCellDef="let row" (click)="openDialogVehicleDetails() "> {{row.zone}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <mat-paginator fxLayoutAlign="center center" style="background: #e1e6eb; color: black;  font-weight: bold;" [pageSizeOptions]="[10, 15, 20, 100]"></mat-paginator>
+
+    </mat-card>
+
+    <!-- <div style="width: 100%; height: 100%;">
+        <table>
+            <tr>
+                <th (click)="openDialogVehicleDetails() ">Tipo de Alerta</th>
+                <th (click)="openDialogVehicleDetails() ">Conductor / Vehículo</th>
+                <th (click)="openDialogVehicleDetails() ">Linea Transportista</th>
+                <th (click)="openDialogVehicleDetails() ">Ubicación</th>
+            </tr>
+
+            <tr>
+                <td (click)="openDialogVehicleDetails() ">Exceso de velocidad</td>
+                <td (click)="openDialogVehicleDetails() ">Juan Rodriguez <br> <b style="color: red"> 140 Km/h</b></td>
+                <td (click)="openDialogVehicleDetails() ">Transportes México</td>
+                <td (click)="openDialogVehicleDetails() ">Anillo Periférico (Valle de México)</td>
+            </tr>
+
+            <tr>
+                <td (click)="openDialogVehicleDetails() ">Vehiculos en geocerca</td>
+                <td (click)="openDialogVehicleDetails() "> <b>GPS: E324 Chevrolet Announces</b> </td>
+                <td (click)="openDialogVehicleDetails() ">Transportes México</td>
+                <td (click)="openDialogVehicleDetails() "> <b style="color: red">Zona de alerta:</b> Calzada de la Viga</td>
+            </tr>
+
+            <tr>
+                <td (click)="openDialogVehicleDetails() ">Exceso de velocidad</td>
+                <td (click)="openDialogVehicleDetails() ">Alberto Herrera <br> <b style="color: red">135 Km/h</b> </td>
+                <td (click)="openDialogVehicleDetails() ">Transportes México</td>
+                <td (click)="openDialogVehicleDetails() "> Avenida de los Insurgentes.</td>
+            </tr>
+
+            <tr>
+                <td (click)="openDialogVehicleDetails() ">Vehiculos en geocerca</td>
+                <td (click)="openDialogVehicleDetails() "> <b> GPS: E985 MAN TGS</b> </td>
+                <td (click)="openDialogVehicleDetails() ">Transportes México</td>
+                <td (click)="openDialogVehicleDetails() "> <b style="color: red">Zona de alerta:</b> Eje Central Lázaro Cárdenas</td>
+            </tr>
+        </table>
+    </div> -->
+
+    <!-- <div style="width: 100%; height: 100%; ">
+        <table>
+            <tr>
+                <th>Vehiculos en Geocerca</th>
+            </tr>
+
+            <tr>
+                <td><b>GPS: E324</b> Zona de alerta: Anillo Periférico (Valle de México)</td>
+            </tr>
+
+            <tr>
+                <td><b>GPS: E856</b> Zona de alerta: Avenida de los Insurgentes.</td>
+            </tr>
+            <tr>
+                <td> <b> GPS: E258</b> Zona de alerta: Calzada de la Viga</td>
+            </tr>
+            <tr>
+                <td><b> GPS: E985</b> Zona de alerta: Eje Central Lázaro Cárdenas</td>
+            </tr>
+        </table>
+    </div> -->
+
+</div>

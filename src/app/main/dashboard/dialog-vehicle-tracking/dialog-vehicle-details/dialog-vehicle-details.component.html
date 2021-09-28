@@ -1,0 +1,117 @@
+<div fxLayoutAlign="end end">
+    <button mat-dialog-close style="border-radius: 10%; padding: 1%; border-color:blanchedalmond ; background-color: #ff322e; color: blanchedalmond;">X</button>
+</div>
+
+<div>
+    <div fxLayoutAlign="center center">
+        <h1>Vehicle Tracking System</h1>
+    </div>
+    <hr>
+    <div fxLayoutAlign="center center">
+        <h2>Ice Cream</h2>
+    </div>
+</div>
+
+
+<div>
+    <div>
+        <div>
+            <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+    </div>
+
+
+    <mat-card style="width: 100%; height: 100%; background: #e1e6eb;">
+
+        <div fxLayoutAlign="center center">
+            <mat-form-field style="width: max-content;" fxLayoutAlign="center center">
+                <div fxLayoutAlign="space-between">
+                    <mat-label>Buscar</mat-label>
+                    <mat-icon style="color: #1da1f2">search</mat-icon>
+                </div>
+                <input matInput (keyup)="applyFilter($event)" #input>
+            </mat-form-field>
+        </div>
+
+        <div fxLayoutAlign="center center">
+            <div class="table mat-elevation-z8">
+
+                <!-- tabla original -->
+
+                <table mat-table [dataSource]="dataSource" matSort style="width: 60vh;">
+
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> N° Vehículos</th>
+                        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="alert">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo de Alerta </th>
+                        <td mat-cell *matCellDef="let row"> {{row.alert}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="conductorVehicle">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Conductor / Vehículo </th>
+                        <td mat-cell *matCellDef="let row"> {{row.conductorVehicle}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="transportista">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Linea Transportista </th>
+                        <td mat-cell *matCellDef="let row"> {{row.transportista}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ubicacion">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ubicación</th>
+                        <td mat-cell *matCellDef="let row"> {{row.ubicacion}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <mat-paginator fxLayoutAlign="center center" style="background: #e1e6eb; color: black;  font-weight: bold;" [pageSizeOptions]="[10, 15, 20, 100]"></mat-paginator>
+
+    </mat-card>
+
+    <!-- <div fxLayoutAlign="center center">
+
+    <div>
+        <div>
+            <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+    </div>
+
+    <div style="width: 100%; height: 100%;">
+        <table>
+            <tr>
+                <th>Tipo de Alerta</th>
+                <th>Conductor / Vehículo</th>
+                <th>Linea Transportista</th>
+                <th>Ubicación</th>
+            </tr>
+
+            <tr>
+                <td>Vehiculos en geocerca</td>
+                <td><b>GPS: E324 Chevrolet Announces</b> </td>
+                <td>Transportes México</td>
+                <td><b style="color: red">Zona de alerta:</b> Calzada de la Viga</td>
+            </tr>
+        </table>
+    </div>
+
+</div> -->

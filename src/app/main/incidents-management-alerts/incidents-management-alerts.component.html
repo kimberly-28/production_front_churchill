@@ -1,0 +1,185 @@
+<div style="max-width: 100%; max-height: 100%;">
+    <div fxLayout="row">
+        <!-- HEADER -->
+
+        <div fxLayoutAlign="center center" style="background:#e1e8ed; ">
+            <mat-card class=" border-top">
+                <mat-card-header>
+                    Fuente: Twitter
+                </mat-card-header>
+                <span> - Autor:Oaxaca_AlDia - Fecha:Wed Feb 24 20:11:31 </span><br>
+                <span>
+                                    #AlertaVial accidente en circuito mártires de Río Blanco, esto adelante del frac pozas arcas #precaucion en la zona… https://t.co/cFMUGjvxE8
+                                    </span>
+            </mat-card>
+
+            <mat-card class=" border-top">
+                <span>Fuente: Twitter - Autor:CruzRoja_CDMX - Fecha:Wed Feb 24 21:42:17</span><br>
+                <span>
+                                    Al transitar por #Fcc Hidalgo, #Valle Gómez, #Cuauhtémoc encontrarás un #accidente de #tránsito atendido por #CruzRojaMexicana, ten cuidado y disminuye tu velocidad  https://t.co/W7sLsXgzFb
+                                    </span>
+            </mat-card>
+
+            <mat-card class=" border-top">
+                <span>Fuente: Twitter - Autor:GN_Carreteras - Fecha:Wed Feb 24 21:39:07</span><br>
+                <span>
+                                    #EviteLaZona en #Oaxaca se registra cierre de circulación por habitantes km 260+500 Carretera (185) Coatzacoalcos-Salina Cruz,
+                                    </span>
+            </mat-card>
+
+            <mat-card class=" border-top">
+                <span>Fuente: Twitter - Autor:GraceRM6 - Fecha:Wed Feb 24 22:18:17</span><br>
+                <span>
+                                    #AccidenteVial choque fuerte en Av. Constitución entre Av. 10 de Mayo y Av. Constituyentes de Nuevo León #Guadalupe 15:52
+                                    </span>
+            </mat-card>
+
+            <div style="width: 15%; display: flex; justify-content: end; align-content: end;">
+                <img mat-card-image src="assets/images/logos/twitter.png " (click)="openDialogTwitter()" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <div style="max-width: 100%; max-height: 100%;  ">
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 10%;">
+            <table style="width: 80%;">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Mensaje</th>
+                    <th>Localidad</th>
+                    <th>Instructivo</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>18/01/2021</td>
+                    <td (click)="openDialog() ">Accidente</td>
+                    <td>La Concepción</td>
+                    <td>LLamada SOS</td>
+                    <td fxLayoutAlign="right right ">
+                        <h4>Enviados</h4>
+                        <mat-progress-bar mode="determinate " value="20" color="accent"></mat-progress-bar><br>
+                        <h3>20%</h3>
+                        <h4>Leidos</h4>
+                        <mat-progress-bar mode=" determinate " value="18 " color="warn"></mat-progress-bar>
+                        <h3>18%</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>15/03/2021</td>
+                    <td>Choque</td>
+                    <td>Avenida Balderas 58</td>
+                    <td>Cambio de ruta</td>
+                    <td fxLayoutAlign="right right ">
+                        <h4>Enviados</h4>
+                        <mat-progress-bar mode="determinate " value="20" color="accent"></mat-progress-bar><br>
+                        <h3>20%</h3>
+                        <h4>Leidos</h4>
+                        <mat-progress-bar mode=" determinate " value="20 " color="accent"></mat-progress-bar>
+                        <h3>20%</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>20/03/2021</td>
+                    <td>Accidente</td>
+                    <td>Cuautitlan Izcali</td>
+                    <td>LLamada SOS</td>
+                    <td fxLayoutAlign="right right ">
+                        <h4>Enviados</h4>
+                        <mat-progress-bar mode="determinate " value="20" color="accent"></mat-progress-bar><br>
+                        <h3>20%</h3>
+                        <h4>Leidos</h4>
+                        <mat-progress-bar mode=" determinate " value="20 " color="accent"></mat-progress-bar>
+                        <h3>20%</h3>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td>18/01/2021</td>
+                    <td>Choque</td>
+                    <td> Colonia Juárez</td>
+                    <td>Cambio de ruta</td>
+                    <td fxLayoutAlign="right right ">
+                        <h4>Enviados</h4>
+                        <mat-progress-bar mode="determinate " value="20 " color="warn "></mat-progress-bar><br>
+                        <h3>20%</h3>
+                        <h4>Leidos</h4>
+                        <mat-progress-bar mode="determinate " value="40 " color="accent "></mat-progress-bar>
+                        <h3>40%</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>18/01/2021</td>
+                    <td>Accidente</td>
+                    <td>San Pedro de los pinos</td>
+                    <td>LLamada 911</td>
+                    <td fxLayoutAlign="right right ">
+                        <h4>Enviados</h4>
+                        <mat-progress-bar mode="determinate " value="20 " color="warn "></mat-progress-bar><br>
+                        <h3>20%</h3>
+                        <h4>Leidos</h4>
+                        <mat-progress-bar mode="determinate " value="40 " color="accent "></mat-progress-bar>
+                        <h3>40%</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>18/01/2021</td>
+                    <td>Choque</td>
+                    <td>Plaza de las Vizcaínas 30</td>
+                    <td>Cambio de ruta</td>
+                    <td fxLayoutAlign="right right ">
+                        <h4>Enviados</h4>
+                        <mat-progress-bar mode="determinate " value="20 " color="warn "></mat-progress-bar><br>
+                        <h3>20%</h3>
+                        <h4>Leidos</h4>
+                        <mat-progress-bar mode="determinate " value="40 " color="accent "></mat-progress-bar>
+                        <h3>40%</h3>
+                    </td>
+                </tr> -->
+            </table>
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <!-- <div style="max-width: 50%; " fxLayoutAlign="end end ">
+
+            <fuse-sidebar position=" right " lockedOpen="gt-md " style="margin-right: 20%;">
+
+                <!-- SIDEBAR CONTENT -->
+
+    <!-- <h4 class="light-blue-fg font-size-100 line-height-100; " style="display: flex; justify-content: center; align-content: center; margin: 2%; ">REPORTS</h4>
+
+        <mat-card class="p-16 border-top ">
+            <span class="h4 ">
+                                    Respondimos el llamado y atendimos en tiempo record 43 emergencias durante el 2020. </span>
+            <div style="margin-top: 10px; " fxLayoutAlign="end end ">
+                <button mat-raised-button (click)="openDialog() " style="background: #1da1f2; ">Detalle de evento</button></div>
+        </mat-card>
+
+        <mat-card class="p-16 border-top " fxLayout="row " fxLayoutAlign="start center ">
+            <span class="h4 ">
+                                    Alta velocidad y pavimento resbaladizo provocan varios accidentes viales en el Área Metropolitana.
+                    </span>
+
+        </mat-card>
+
+        <mat-card class="p-16 border-top " fxLayout="row " fxLayoutAlign="start center ">
+            <span class="h4 ">
+                                    Cierre de autopista Sur con calle 63, la vía Choachí y vereda Curubital en Usme.
+                                        </span>
+        </mat-card>
+        <mat-card class="p-16 border-top " fxLayout="row " fxLayoutAlign="start center ">
+            <span class="h4 ">
+                                    Cierre de autopista Sur con calle 63, la vía Choachí y vereda Curubital en Usme.
+                                        </span>
+        </mat-card>
+        <mat-card class="p-16 border-top " fxLayout="row " fxLayoutAlign="start center ">
+            <span class="h4 ">
+                                    Cierre de autopista Sur con calle 63, la vía Choachí y vereda Curubital en Usme.
+                                        </span>
+        </mat-card>
+
+        </fuse-sidebar> -->
+
+    <!-- </div>  -->
+
+</div>

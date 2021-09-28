@@ -1,0 +1,85 @@
+<div style="width: 100%; height: 100%;">
+    <div fxLayoutAlign="end end">
+        <button mat-dialog-close style="border-radius: 10%; padding: 1%; border-color:blanchedalmond ; background-color: #ff322e; color: blanchedalmond;">X</button>
+    </div>
+
+    <div fxLayoutAlign="center center">
+        <h1>Nueva Palabra Clave </h1>
+    </div>
+
+    <form [formGroup]="formKeyWord" autocomplete="off" style="margin-top: 5%;">
+        <div fxLayoutAlign="center center">
+
+            <ng-container>
+                <ng-container *ngIf="updateKeyWord?.key_word; else newKeyWord">
+                    <mat-label>Palabra Clave</mat-label>
+                    <input class="form-control" type="text" formControlName="key_word" [(ngModel)]="updateKeyWord.key_word">
+                </ng-container>
+                <ng-template #newKeyWord>
+                    <mat-label>Palabra Clave</mat-label>
+                    <input class="form-control" type="text" placeholder="Terremoto" formControlName="key_word" [(ngModel)]="keyWordRegister.key_word">
+                </ng-template>
+            </ng-container>
+
+        </div>
+
+        <div fxLayoutAlign="center center">
+
+            <ng-container>
+                <ng-container *ngIf="updateKeyWord?.alerts; else newAlert">
+                    <mat-label>Tipo de Alerta</mat-label>
+                    <mat-form-field>
+                        <mat-label fxlayoutAlign="end end "><b>Alerta</b> </mat-label>
+                        <mat-select (selectionChange)="selectAlert($event.value)">
+                            <mat-option *ngFor="let alert of alertsTypes " [value]="alert">
+                                {{alert.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </ng-container>
+                <ng-template #newAlert>
+                    <mat-label>Tipo de Alerta</mat-label>
+                    <mat-form-field>
+                        <mat-label fxlayoutAlign="end end "><b>Alerta</b> </mat-label>
+                        <mat-select (selectionChange)="selectAlert($event.value)">
+                            <mat-option *ngFor="let alert of alertsTypes " [value]="alert">
+                                {{alert.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </ng-template>
+            </ng-container>
+
+        </div>
+
+        <div fxLayoutAlign="center center">
+            <mat-label>Nivel de Riesgo</mat-label>
+            <ng-container>
+                <ng-container *ngIf="updateKeyWord?.risk_level; else newRiskLevel">
+                    <h4 class="card-text">{{selectedAlert?.risk_level}}</h4>
+                </ng-container>
+                <ng-template #newRiskLevel>
+                    <h4 class="card-text">{{selectedAlert?.risk_level}}</h4>
+                </ng-template>
+            </ng-container>
+
+        </div>
+
+        <div fxLayoutAlign="center center">
+            <mat-label>Protocolo de Acción</mat-label>
+            <ng-container>
+                <ng-container *ngIf="updateKeyWord?.action_protocol; else newActionProtocol">
+                    <h4 class="card-text">{{selectedAlert?.action_protocol}}</h4>
+                </ng-container>
+                <ng-template #newActionProtocol>
+                    <h4 class="card-text">{{selectedAlert?.action_protocol}}</h4>
+                </ng-template>
+            </ng-container>
+        </div>
+
+    </form>
+
+    <div style="margin: 5%" fxLayoutAlign="center center">
+        <button (click)="createKeyWord()" mat-raised-button style="background: #00acee; padding: 1%; ">Agregar</button>
+    </div>
+</div>

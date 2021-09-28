@@ -1,0 +1,251 @@
+<div style="width: 100%; height: 100%;  background: #aab8c2;" fxLayoutAlign="center center">
+
+    <div style="width: 100%; height: auto; padding-left: 5%;">
+
+        <div style="width:50%; height: auto; margin-top: 1%;" fxLayoutAlign="space-between">
+
+            <mat-card style="background:#e1e8ed;" (click)="openDialogLogistic()">
+
+                <mat-card-title>
+                    <h1>Logistic and Transportation</h1>
+                </mat-card-title>
+                <div fxLayoutAlign="center center">
+                    <button mat-raised-button matBadge="4" style="background: #1da1f2;">Lunes 06:11 pm </button>
+                </div>
+
+                <div>
+                    <mat-card class="view-alerts">
+                        <b>GPS: E324</b> Zona de alerta: Anillo Periférico (Valle de México)
+                    </mat-card>
+                    <mat-card class="view-alerts">
+                        <b>GPS: E856</b> Zona de alerta: Avenida de los Insurgentes.
+                    </mat-card>
+                </div>
+
+                <!-- <div fxLayoutAlign="right right">
+                    <div style="width: 100%; height: 100%; " fxLayoutAlign="right right">
+                        <mat-card class="modulos">
+                            <b> GPS: E985</b> Zona de alerta: Eje Central Lázaro Cárdenas
+                        </mat-card>
+                        <mat-card class="modulos">
+                            <b> GPS: E258</b> Zona de alerta: Calzada de la Viga
+                        </mat-card>
+                    </div>
+                </div> -->
+            </mat-card>
+
+            <mat-card style="background:     #e1e8ed;" (click)="openDialogIncidents()">
+                <mat-card-title>
+                    <h1>Incidents and Management Alerts</h1>
+                </mat-card-title>
+                <div fxLayoutAlign="center center">
+                    <button mat-raised-button matBadge="2" style="background: #1da1f2;">Lunes 06:11 pm </button>
+                </div>
+
+                <div>
+                    <mat-card class="view-alerts">
+                        Emisora CPR La Primera @cprlaprimera · 28 oct. 2020 ¡CIERRE DE CALLELuz giratoria de coches de policía! A esta hora se registra un cierre de vía a la altura de la segunda entrada de Nvo. México.
+                    </mat-card>
+                    <mat-card class="view-alerts">
+                        C5 Estado de México @C5Edomex · 2h #PrecauciónVialSeñal de peligro|La @SS_Edomex mediante cámaras Cámara de cinedel @C5Edomex visualiza #TránsitoLento derivado de un #Accidente sobre Paseo Tollocan y San Jerónimo #Toluca provocando #AsentamientoVial con
+                        afectación de 3.4 kilómetros, dirección Toluca. Servicios de #EmergenciaCoche de policíaAmbulanciaen la zona.
+                    </mat-card>
+                </div>
+
+                <!-- <div fxLayoutAlign="right right">
+                    <div style="width: 100%; height: 100%; " fxLayoutAlign="right right">
+                        <mat-card class="modulos">
+                            Tráfico Expreso @TraficoExpreso · 1h DISTRITO NACIONAL / Ciudadanos a modo de protesta se concentran en la Av. Dr. Delgado con Av. México en sentido Norte - Sur, tránsito congestionado en esta dirección. Agentes de la @digesettrd viabilizando en el lugar.
+                            #TráficoExpreso
+                        </mat-card>
+                        <mat-card class="modulos">
+                            URBANO @urbano_noticias · 20h #Elecciones2021 Señal de StopSeñal de Stop Por manifestación frente a instalaciones del @PRIdePUEBLA esta bloqueado el carril de @RUTA_Puebla . Urbano | Noticias México
+                        </mat-card>
+                    </div>
+                </div> -->
+            </mat-card>
+
+            <mat-card style="background:     #e1e8ed;" (click)="openDialogSecurity()">
+                <mat-card-title>
+                    <h1> Security Alarms and Panic Button</h1>
+                </mat-card-title>
+                <div fxLayoutAlign="center center">
+                    <button mat-raised-button matBadge="17" style="background: #1da1f2;">Lunes 06:11 pm </button>
+                </div>
+
+                <div style="width: 100%; height: 100%; ">
+                    <mat-card class="view-alerts">
+                        <span style="color: red;">Botón de Pánico Activado</span> <br>
+                        <b>Conductor: </b> Julio Aparicio <br>
+                        <b>Vehiculo:</b> mercedes antos
+                    </mat-card>
+                    <mat-card class="view-alerts">
+                        <span style="color: red;">Botón de Pánico Activado</span> <br>
+                        <b>Conductor: </b> Gilberto Sanchez<br>
+                        <b>Vehiculo: </b> MAN TGS
+                    </mat-card>
+                </div>
+
+                <!-- <div fxLayoutAlign="right right">
+                    <div style="width: 100%; height: 100%; " fxLayoutAlign="right right">
+                        <mat-card class="modulos">
+                            atentado
+                        </mat-card>
+                        <mat-card class="modulos">
+                            Secuestro
+                        </mat-card>
+                    </div>
+                </div> -->
+            </mat-card>
+
+        </div>
+
+        <div style="width: 50%; height: auto;  margin-top: 1%;" fxLayoutAlign="space-between">
+
+            <mat-card style="background:     #e1e8ed;" (click)="openDialogVehicleTracking()">
+                <mat-card-title>
+                    <h1>Vehicle Tracking System</h1>
+                </mat-card-title>
+                <div fxLayoutAlign="center center">
+                    <button mat-raised-button matBadge="4" style="background: #1da1f2;">Lunes 06:11 pm </button>
+                </div>
+
+                <div>
+                    <mat-card class="view-alerts">
+                        <b>Condutor: </b> Roberto Gomez <br>
+                        <b>Vehículo: </b> Hyundai HD78 <br>
+                        <b>Velocidad: </b> 90 km/h
+                    </mat-card>
+                    <mat-card class="view-alerts">
+                        <b>Condutor: </b> Rafael Hernández <br>
+                        <b>Vehiculo: </b> Chevrolet Announces <br>
+                        <b>Velocidad: </b> 100 km/h
+                    </mat-card>
+                </div>
+
+                <!-- <div fxLayoutAlign="right right">
+                    <div style="width: 100%; height: 100%; " fxLayoutAlign="right right">
+                        <mat-card class="modulos">
+                            <b>Condutor: </b> Julio Aparicio
+                            <b>Vehiculo: </b> mercedes antos
+                            <b>Velocidad: </b> 80 km/h
+                        </mat-card>
+                        <mat-card class="modulos">
+                            <b>Condutor: </b> Gilberto Sanchez
+                            <b>Vehiculo: </b> MAN TGS
+                            <b>Velocidad: </b> 180 km/h
+                        </mat-card>
+                    </div>
+                </div> -->
+            </mat-card>
+
+            <mat-card style="background:     #e1e8ed;" (click)="openDialogEmergencyEmployee()">
+                <mat-card-title>
+                    <h1>Emergency Employee Number</h1>
+                </mat-card-title>
+                <div fxLayoutAlign="center center">
+                    <button mat-raised-button matBadge="3" style="background: #1da1f2;">Lunes 06:11 pm </button>
+                </div>
+                <div fxLayoutAlign="right right">
+                    <div style="width: 100%; height: 100%; ">
+                        <mat-card class="view-alerts">
+                            <b>Ejecutivo:</b> Rafael Ramirez <br>
+                            <b>Mensaje:</b> <br>
+                        </mat-card>
+                        <mat-card class="view-alerts">
+                            <b>Ejecutivo:</b> Alfonso Gutierrez <br>
+                            <b>Mensaje:</b> <br>
+                        </mat-card>
+                    </div>
+                </div>
+                <!-- <div fxLayoutAlign="right right">
+                    <div style="width: 100%; height: 100%; " fxLayoutAlign="right right">
+                        <mat-card class="modulos">
+                            Tráfico Expreso @TraficoExpreso · 1h DISTRITO NACIONAL / Ciudadanos a modo de protesta se concentran en la Av. Dr. Delgado con Av. México en sentido Norte - Sur, tránsito congestionado en esta dirección. Agentes de la @digesettrd viabilizando en el lugar.
+                            #TráficoExpreso
+                        </mat-card>
+                        <mat-card class="modulos">
+                            URBANO @urbano_noticias · 20h #Elecciones2021 Señal de StopSeñal de Stop Por manifestación frente a instalaciones del @PRIdePUEBLA esta bloqueado el carril de @RUTA_Puebla . Urbano | Noticias México
+                        </mat-card>
+                    </div>
+                </div> -->
+            </mat-card>
+
+            <mat-card style="background:     #e1e8ed;">
+                <mat-card-title>
+                    <h1>CCTV</h1>
+                </mat-card-title>
+                <div fxLayoutAlign="center center">
+                    <button mat-raised-button matBadge="10" style="background: #1da1f2;">Lunes 06:11 pm </button>
+                </div>
+                <div>
+                    <div style="width: 100%; height: 100%; ">
+                        <mat-card class="view-alerts">
+                            Detección de movimiento de mercancía no autorizada.
+                        </mat-card>
+                        <mat-card class="view-alerts">
+                            Detección de persona con arma blanca.
+                        </mat-card>
+                    </div>
+                </div>
+                <!-- <div fxLayoutAlign="right right">
+                    <div style="width: 100%; height: 100%; " fxLayoutAlign="right right">
+                        <mat-card class="modulos">
+                            Tráfico Expreso @TraficoExpreso · 1h DISTRITO NACIONAL / Ciudadanos a modo de protesta se concentran en la Av. Dr. Delgado con Av. México en sentido Norte - Sur, tránsito congestionado en esta dirección. Agentes de la @digesettrd viabilizando en el lugar.
+                            #TráficoExpreso
+                        </mat-card>
+                        <mat-card class="modulos">
+                            URBANO @urbano_noticias · 20h #Elecciones2021 Señal de StopSeñal de Stop Por manifestación frente a instalaciones del @PRIdePUEBLA esta bloqueado el carril de @RUTA_Puebla . Urbano | Noticias México
+                        </mat-card>
+                    </div>
+                </div> -->
+            </mat-card>
+
+        </div>
+
+    </div>
+
+    <div style="width: auto; height: auto; padding-left: 3%; padding-right: 5%;">
+
+        <div fxLayoutAlign="center center">
+            <button mat-raised-button style="background: #00acee; padding-left: 2%; padding-right: 2%; " (click)="openDialogAddReport() ">Agregar Reporte de Incidencia</button>
+        </div>
+
+        <div>
+            <mat-card style="width: auto; height: auto;  background: #e1e8ed;">
+                <h1 style="margin: 1%;" fxLayoutAlign="center center">Infohub</h1><br>
+
+                <mat-card class="view-alerts-infohub">
+                    <b>GPS: E324</b> Zona de alerta: Anillo Periférico (Valle de México)
+                </mat-card>
+
+                <mat-card class="view-alerts-infohub">
+                    Emisora CPR La Primera @cprlaprimera · 28 oct. 2020 ¡CIERRE DE CALLELuz giratoria de coches de policía! A esta hora se registra un cierre de vía a la altura de la segunda entrada de Nvo. México.
+                </mat-card>
+
+                <mat-card class="view-alerts-infohub">
+                    <span style="color: red;">Botón de Pánico Activado</span> <br>
+                    <b>Conductor: </b> Gilberto Sanchez<br>
+                    <b>Vehículo: </b> MAN TGS
+                </mat-card>
+
+                <mat-card class="view-alerts-infohub">
+                    <b>Conductor: </b> Rafael Hernández <br>
+                    <b>Vehículo: </b> Chevrolet Announces <br>
+                    <b>Velocidad: </b> 100 km/h
+                </mat-card>
+
+                <mat-card class="view-alerts-infohub">
+                    Detección de movimiento de mercancía no autorizada.
+                </mat-card>
+
+                <mat-card class="view-alerts-infohub">
+                    <b>Ejecutivo:</b> Rafael Ramirez <br>
+                    <b>Mensaje:</b> Accidente en vía <br>
+                </mat-card>
+            </mat-card>
+        </div>
+
+    </div>
+
+</div>

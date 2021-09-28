@@ -1,0 +1,39 @@
+<div fxLayoutAlign="end end">
+    <button mat-dialog-close style="border-radius: 10%; padding: 1%; border-color:blanchedalmond ; background-color: #ff322e; color: blanchedalmond;">X</button>
+</div>
+
+
+<div fxLayoutAlign="center center" style="margin-bottom: 2%;">
+    <h1>Logistic and Transportation </h1>
+</div>
+<hr>
+
+<div fxLayoutAlign="center center" style="margin-top: 5%; margin-bottom: 5%;">
+
+    <div>
+        <div>
+            <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+    </div>
+
+    <div style="width: 100%; height: 100%; ">
+        <table>
+            <tr>
+                <th>Tipo de Alerta</th>
+                <th>Conductor / Vehículo</th>
+                <th>Linea Transportista</th>
+                <th>Ubicación</th>
+            </tr>
+
+            <tr>
+                <td>Exceso de velocidad</td>
+                <td> Alberto Herrera <br> <b style="color: red">135 Km/h</b> </td>
+                <td>Transportes México</td>
+                <td> Avenida de los Insurgentes.</td>
+            </tr>
+        </table>
+    </div>
+
+</div>

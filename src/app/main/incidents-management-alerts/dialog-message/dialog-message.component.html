@@ -1,0 +1,83 @@
+<div style="width: 100%; height: 100%;">
+    <div fxLayoutAlign="end">
+        <button mat-raised-button mat-dialog-close style=" background-color: hsl(19, 100%, 49%); color: rgb(255, 255, 255);">X</button>
+    </div>
+
+    <div style="margin-left: 25%;">
+        <h2>Mapa y relacionados con el incidente</h2>
+    </div>
+
+    <div fxLayoutAlign="center center" style="padding: 2%;">
+
+        <mat-card fxLayout="column" style="background: #e1e8ed; margin-right: 2%; ">
+            <agm-map [latitude]="lat " [longitude]="lng " [zoom]="zoom ">
+                <agm-marker [latitude]="lat " [longitude]="lng "> </agm-marker>
+
+                <agm-marker [latitude]="lat2 " [longitude]="lng2 " [iconUrl]="{url: './assets/images/avatars/Josefina.jpg',scaledSize: { width: 60, height: 60}} "> </agm-marker>
+                <agm-marker [latitude]="lat3 " [longitude]="lng3 " [iconUrl]="{url: './assets/images/avatars/Abbott.jpg',scaledSize: { width: 60, height: 60}} "> </agm-marker>
+                <agm-marker [latitude]="lat4 " [longitude]="lng4 " [iconUrl]="{url: './assets/images/avatars/garry.jpg',scaledSize: { width: 60, height: 60}} "> </agm-marker>
+
+            </agm-map>
+        </mat-card>
+
+        <mat-card style="background: #e1e8ed ">
+            <mat-card-title style="display: flex; justify-content: center; ">
+                <h2>Mensaje</h2>
+            </mat-card-title>
+            <mat-card style="background: #f5f8fa ">
+                <form autocomplete="off ">
+                    <div fxLayoutAlign="row ">
+                        <div fxLayoutAlign="col ">
+                            <div style="margin: 2%; ">
+                                <label>Incidente:</label>
+                                <input type="text " placeholder="Accidente " formControlName="Incidente ">
+                            </div>
+                            <div style="margin: 2%; ">
+                                <label>Fecha:</label>
+                                <input type="email " placeholder="20/02/2021 " formControlName="fecha ">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div fxLayoutAlign="row ">
+                        <div fxLayoutAlign="col ">
+                            <div style="margin: 2%; ">
+                                <label>Nivel de Riesgo:</label>
+                                <input type="text " placeholder="Bajo " formControlName="Incidente ">
+                            </div>
+                            <div style="margin: 2%; ">
+                                <label>Tipo de Alarma:</label>
+                                <input type="email " placeholder="Única Zona " formControlName="fecha ">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div fxLayoutAlign="row " style="width: 100%; ">
+                        <div fxLayoutAlign="col " style="width: 100%; ">
+                            <div style="margin: 2%; ">
+                                <label>Mensaje</label>
+                                <div>
+                                    <textarea type="text " placeholder="accidente en circuito mártires de Río Blanco ">Accidente en circuito mártires de Río Blanco</textarea></div>
+                            </div>
+                            <div style="margin: 2%; margin-left: 12%; ">
+                                <label>Instructivo</label>
+                                <input type="text " placeholder="Cambio de ruta " name="Instructivo " formControlColor="Instructivo ">
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </mat-card>
+            <div style="display: flex; justify-content: center; margin-top: 3%; ">
+                <h4 style="margin-top: 3%; "><b>Usuarios Cercanos :</b> </h4>
+                <ul style="display: flex; justify-content: space-around; ">
+                    <li>Cristina Mendoza</li>
+                    <li>Ramón Gonzalez</li>
+                    <li>Julio Aparicio</li>
+                </ul>
+            </div>
+
+
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+body {
+    background: #f2f2f2;
+    font-family: Arial, Sans-serif;
+}
+
+input {
+    display: block;
+    color: rgb(167, 162, 162);
+}
+
+input[type="text"],
+input[type="email"] {
+    padding: 3%;
+    border: 1px solid #226fc1;
+    font-family: Arial;
+    margin: 1%;
+    width: 100%;
+}
+
+mat-label {
+    font-weight: bolder;
+    color: black;
+    width: 100%;
+}

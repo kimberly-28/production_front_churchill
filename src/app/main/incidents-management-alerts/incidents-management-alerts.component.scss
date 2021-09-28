@@ -1,0 +1,62 @@
+mat-card {
+    width: 20vw;
+    height: 20vh;
+    margin: 2%;
+    overflow: hidden;
+    text-align: center;
+}
+
+mat-card:hover {
+    overflow-y: scroll;
+}
+
+mat-progress-bar {
+    height: 3vh;
+    width: 15vw;
+    margin-top: 3%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50vw;
+    text-align: center;
+}
+
+td,
+th {
+    border: 1px solid #9ba7eb;
+    text-align: center;
+    justify-content: center;
+}
+
+th {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #bbdeff;
+}
+
+h3,
+h4 {
+    margin: 3%;
+}
+
+mat-icon {
+    height: 5%;
+    width: 5%;
+}
+
+fuse-sidebar {
+    overflow-y: scroll;
+}
+
+// mat-card-header {
+//     width: 100%;
+//     height: auto;
+//     border-radius: 5%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
